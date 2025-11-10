@@ -17,7 +17,7 @@
 
     .container {
       width: 80%;
-      height: 100px; 
+      height: 100px;
       border: 3px solid #0077b6;
       border-radius: 12px;
       background-color: #caf0f8;
@@ -25,7 +25,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px; 
+      padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
@@ -42,7 +42,7 @@
 <body>
 
   <div class="container">
-    <div id="texto">Acredite nos seus sonhos, porque com força de vontade você pode chegar onde você quiser!</div>
+    <div id="texto">Acredite em seus sonhos</div>
   </div>
 
   <script>
@@ -60,8 +60,12 @@
       pos += direcao * velocidade;
       texto.style.transform = `translateX(${pos}px)`;
 
-      if (pos + larguraTexto >= larguraContainer || pos <= 0) {
-        direcao *= -1;
+      if (pos + larguraTexto >= larguraContainer - 20) { 
+        direcao = -1;
+      }
+
+      if (pos <= 20) {
+        direcao = 1;
       }
 
       requestAnimationFrame(moverLetreiro);
