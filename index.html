@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Letreiro</title>
+  <title>Letreiro Motivacional</title>
 
   <style>
     body {
@@ -42,7 +42,7 @@
 <body>
 
   <div class="container">
-    <div id="texto">Acredite em seus sonhos</div>
+    <div id="texto">Acredite nos seus sonhos e chegue muito longe!</div>
   </div>
 
   <script>
@@ -60,12 +60,8 @@
       pos += direcao * velocidade;
       texto.style.transform = `translateX(${pos}px)`;
 
-      if (pos + larguraTexto >= larguraContainer - 20) { 
-        direcao = -1;
-      }
-
-      if (pos <= 20) {
-        direcao = 1;
+      if (pos + larguraTexto >= larguraContainer || pos <= 0) {
+        direcao *= -1;
       }
 
       requestAnimationFrame(moverLetreiro);
